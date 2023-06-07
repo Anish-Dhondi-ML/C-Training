@@ -1,0 +1,36 @@
+﻿  EmpClass.cpp
+C:\Users\prabh\source\repos\MySQLDB\MySQLDB\EmpClass.cpp(114): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\prabh\source\repos\MySQLDB\MySQLDB\EmpClass.cpp(166,31): message : see reference to function template instantiation 'void Employee::respond_As_Vector<std::vector<ApprovalStatus,std::allocator<ApprovalStatus>>>(V)' being compiled
+          with
+          [
+              V=std::vector<ApprovalStatus,std::allocator<ApprovalStatus>>
+          ]
+     Creating library C:\Users\prabh\source\repos\MySQLDB\x64\Release\MySQLDB.lib and object C:\Users\prabh\source\repos\MySQLDB\x64\Release\MySQLDB.exp
+  Generating code
+  293 of 378 functions (77.5%) were compiled, the rest were copied from previous compilation.
+    245 functions were new in current compilation
+    11 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+mysqlcppconn-static.lib(mysql_driver.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_driver.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_connection.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_connection.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_native_driver_wrapper.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_native_driver_wrapper.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_uri.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_uri.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_metadata.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_metadata.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_warning.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_warning.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_prepared_statement.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_prepared_statement.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_statement.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_statement.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_debug.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_debug.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_client_api.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_client_api.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_native_connection_wrapper.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_native_connection_wrapper.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_util.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_util.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_art_resultset.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_art_resultset.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_resultbind.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_resultbind.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_ps_resultset.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_ps_resultset.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_ps_resultset_metadata.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_ps_resultset_metadata.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_parameter_metadata.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_parameter_metadata.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_resultset.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_resultset.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_native_resultset_wrapper.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_native_resultset_wrapper.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_native_statement_wrapper.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_native_statement_wrapper.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_art_rset_metadata.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_art_rset_metadata.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_resultset_metadata.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_resultset_metadata.obj)' or at ''; linking object as if no debug info
+  MySQLDB.vcxproj -> C:\Users\prabh\source\repos\MySQLDB\x64\Release\MySQLDB.exe

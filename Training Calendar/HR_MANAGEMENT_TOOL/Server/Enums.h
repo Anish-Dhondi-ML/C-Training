@@ -1,0 +1,76 @@
+#ifndef ENUMS_H
+#define ENUMS_H
+
+const char* EmployeeStrings[] = {
+    "EMPLOYEE_REJECTED",
+    "EMPLOYEE_ACCEPTED",
+    "EMPLOYEE_WITH_HELD",
+};
+
+const char* RMStrings[] = {
+    "RM_REJECTED",
+    "RM_ACCEPTED",
+    "RM_WITH_HELD",
+     "RM_NEW_COURSE",
+
+};
+
+const char* TMStrings[] = {
+    "TM_REJECTED",
+    "TM_ACCEPTED",
+    "TM_WITH_HELD",
+};
+
+enum MessageType
+{
+    // FOR RETRIVING CALENDER
+    REQUEST_TRAINING_CALENDER,
+
+    // FOR EMPLOYEE CLASS
+    NOMINATE_REQUEST,
+    EMPLOYEE_ACTIVE_REQUEST,
+    EMPLOYEE_PENDING_REQUEST,
+    EMPLOYEE_APPROVAL_STATE,
+
+    // FOR RM CLASS
+    RM_ACTIVE_REQUEST,
+    RM_PENDING_REQUEST,
+    RM_APPROVAL_STATE,
+    RM_NOMINATE_EMPLOYEES,
+    RM_NEW_COURSE_REQUEST,
+
+    // FOR TM CLASS
+    TM_EMPLOYEE_APPROVAL,
+    TM_COURSE_APPROVAL,
+    CREATE_COURSE,
+    RETRIEVE_EMPLOYEE_REQUEST,
+    RETRIEVE_RM_REQUEST,
+};
+
+enum Employee_Status{
+    EMPLOYEE_REJECTED,
+    EMPLOYEE_ACCEPTED,
+    EMPLOYEE_WITH_HELD,
+};
+
+enum RM_Status{
+    RM_REJECTED,
+    RM_ACCEPTED,
+    RM_WITH_HELD,
+
+    RM_NEW_COURSE,
+};
+
+enum TM_Status{
+    TM_REJECTED,
+    TM_ACCEPTED,
+    TM_WITH_HELD,
+};
+
+enum Emp{
+    EMPLOYEE,
+    REPORTING_MANAGER,
+    TRAINING_MANAGER,
+};
+
+#endif

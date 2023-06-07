@@ -1,0 +1,104 @@
+#include <iostream>
+#include <cstring>
+#include <sys/time.h>
+#include <sys/socket.h>
+#include <unistd.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <cstdlib>
+#include <vector>
+
+
+#define PORT 8888
+#define MAX_CLIENT 100
+
+class Server {
+public:
+    Server() : server_fd(0), new_socket(0), sd(0), max_sd(0), activity(0), addrlen(sizeof(server_address)),
+               readfds{}, client_sockets(MAX_CLIENT, 0), hello("Hello from server side") {}
+
+    void start() {
+        create_socket();
+        setup_options();
+        bind_socket();
+        listen_socket();
+        accept_connections();
+    }
+
+private:
+    int server_fd, new_socket, sd, max_sd, activity;
+    int addrlen;
+    char buffer[1024] = {0};
+    const char *hello;
+    struct sockaddr_in server_address{};
+    std::vector<int> client_sockets;
+    fd_set readfds;
+
+    void create_socket() {
+        if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+            std::cerr << "Socket failed" << std::endl;
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    void setup_options() {
+        int opt = 1;
+        if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(server_address)) < 0) {
+            std::cerr << "setsockopt" << std::endl;
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    void bind_socket() {
+        server_address.sin_family = AF_INET;
+        server_address.sin_addr.s_addr = INADDR_ANY;
+        server_address.sin_port = htons(PORT);
+
+        if (bind(server_fd, (struct sockaddr *) &server_address, sizeof(server_address)) < 0) {
+            std::cerr << "bind failed" << std::endl;
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    void listen_socket() {
+        if (listen(server_fd, 3) < 0) {
+            std::cerr << "listen error" << std::endl;
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    void accept_connections() {
+        std::cout << "\n\nWaiting for new connections...\n\n";
+        struct timeval timeout{};
+        timeout.tv_sec = 10.0;
+        timeout.tv_usec = 0;
+
+        while (true) {
+            FD_ZERO(&readfds);
+            FD_SET(server_fd, &readfds);
+            max_sd = server_fd;
+
+            for (int i = 0; i < MAX_CLIENT; i++) {
+                sd = client_sockets[i];
+                if (sd > 0)
+                    FD_SET(sd, &readfds);
+
+                max_sd = std::max(max_sd, sd);
+            }
+
+            activity = select(max_sd + 1, &readfds, nullptr, nullptr, &timeout);
+            if ((activity < 0) && (errno != EINTR)) {
+                std::cerr << "select error" << std::endl;
+            }
+            timeout.tv_sec += 10.0;
+            std::cout << "activity: " << activity << std::endl;
+
+            if (FD_ISSET(server_fd, &readfds)) {
+                if ((new_socket = accept(server_fd, (struct sockaddr *) &server_address,
+                                         (socklen_t *) &addrlen)) < 0) {
+                    std::cerr << "Error accept" << std::endl;
+                    exit(EXIT_FAILURE);
+                }
+
+                std::cout << "New connection, socket fd is: " << new_socket << "\nIP is: "
+                         
